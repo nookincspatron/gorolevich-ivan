@@ -1,17 +1,17 @@
 package ulsu.gorolevichivan.entity.general;
 
 import lombok.Data;
-import ulsu.gorolevichivan.entity.structure.Employee;
 import ulsu.gorolevichivan.entity.common.Dictionary;
+import ulsu.gorolevichivan.entity.structure.Employee;
 
 import javax.persistence.*;
-import java.security.Timestamp;
+import java.sql.Timestamp;
 import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "tasks")
-public class Task {
+@Table(name = "projects")
+public class Project {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -39,44 +39,16 @@ public class Task {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "division")
-    private Dictionary division;
-
-    @ManyToOne
     @JoinColumn(name = "status")
     private Dictionary status;
 
     @Column(name = "is_done")
     private Boolean isDone;
 
-    @Column(name = "allow_parallel")
-    private Boolean allowParallel;
+    @Column(name = "consumer")
+    private String consumer;
 
     @ManyToOne
-    @JoinColumn(name = "project")
-    private Project project;
-
-    @ManyToOne
-    @JoinColumn(name = "prevTask")
-    private Task prevTask;
-
-    @ManyToOne
-    @JoinColumn(name = "nextTask")
-    private Task nextTask;
-
-    @ManyToOne
-    @JoinColumn(name = "creator")
-    private Employee creator;
-
-    @ManyToOne
-    @JoinColumn(name = "performer")
-    private Employee performer;
-
-    @ManyToOne
-    @JoinColumn(name = "prev_performer")
-    private Employee prevPerformer;
-
-    @ManyToOne
-    @JoinColumn(name = "prev_reviewer")
-    private Employee prevReviewer;
+    @JoinColumn(name = "manager")
+    private Employee manager;
 }
