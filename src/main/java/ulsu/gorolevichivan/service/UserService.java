@@ -42,6 +42,6 @@ public class UserService {
             String username,
             String password) {
         User user = this.findByUsername(username);
-        return passwordEncoder.matches(passwordEncoder.encode(password), user.getPassword());
+        return passwordEncoder.matches(password, user.getPassword());
     }
 }
