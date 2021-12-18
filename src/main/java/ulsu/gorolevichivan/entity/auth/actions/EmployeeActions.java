@@ -12,11 +12,11 @@ public class EmployeeActions {
     @Column(name = "employee_create")
     private Boolean employeeCreate = null;
 
-    @Column(name = "employee_general_edit")
-    private Boolean employeeGeneralEdit = null;
+    @Column(name = "position_create")
+    private Boolean positionCreate = null;
 
-    @Column(name = "employee_action_edit")
-    private Boolean employeeActionEdit = null;
+    @Column(name = "division_create")
+    private Boolean divisionCreate = null;
 
     @Override
     public boolean equals(Object object) {
@@ -29,8 +29,8 @@ public class EmployeeActions {
 
         if (employeeCreate != null ? !employeeCreate.equals(that.employeeCreate) : that.employeeCreate != null)
             return false;
-        if (employeeGeneralEdit != null ? !employeeGeneralEdit.equals(that.employeeGeneralEdit) : that.employeeGeneralEdit != null)
+        if (positionCreate != null ? positionCreate.equals(that.positionCreate) : that.positionCreate != null)
             return false;
-        return employeeActionEdit != null ? employeeActionEdit.equals(that.employeeActionEdit) : that.employeeActionEdit == null;
+        return divisionCreate != null ? !divisionCreate.equals(that.divisionCreate) : that.divisionCreate == null;
     }
 }

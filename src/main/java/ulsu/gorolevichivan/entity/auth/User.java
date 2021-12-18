@@ -15,26 +15,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "first_name")
-    private String firstName;
+    @Column(name = "username", unique = true)
+    private String username;
 
-    @Column(name = "middle_name")
-    private String middleName;
+    @Column(name = "password")
+    private String password;
 
-    @Column(name = "last_name")
-    private String lastName;
-
-    @Column(name = "email")
-    private String email;
-
-    @Column(name = "login")
-    private String login;
-
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "user_positions",
-            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "position_id", referencedColumnName = "id")
-    )
-    private List<Position> positions;
+    @ManyToOne
+    @JoinColumn(name = "user_role")
+    private UserRole userRole;
 }

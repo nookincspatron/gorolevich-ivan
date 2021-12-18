@@ -17,6 +17,10 @@ public class Comment {
     private String description;
 
     @ManyToOne
+    @JoinColumn(name = "project")
+    private Project project;
+
+    @ManyToOne
     @JoinColumn(name = "task")
     private Task task;
 

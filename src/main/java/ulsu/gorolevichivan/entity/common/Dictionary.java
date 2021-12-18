@@ -12,9 +12,6 @@ public class Dictionary {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "code")
-    private Long code;
-
     @Column(name = "type")
     private String type;
 

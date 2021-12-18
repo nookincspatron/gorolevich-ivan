@@ -20,6 +20,6 @@ public class Position {
     private String responsibilities;
 
     @ManyToOne
-    @JoinColumn(name = "position_unit")
-    private PositionUnit positionUnit;
+    @JoinColumn(name = "division")
+    private Division division;
 }
