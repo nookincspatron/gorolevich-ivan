@@ -30,7 +30,7 @@ public class AuthController {
         this.jwtProvider = jwtProvider;
     }
 
-    @PostMapping(path = "/login", consumes = "application/json", produces = "application/json")
+    @PostMapping(consumes = "application/json", produces = "application/json")
     public ResponseEntity<Response> auth(
             @RequestBody AuthRequest authRequest
     ) {
