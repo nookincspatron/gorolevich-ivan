@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import ulsu.gorolevichivan.entity.auth.User;
 import ulsu.gorolevichivan.entity.auth.UserRole;
 import ulsu.gorolevichivan.entity.auth.UserRoleActions;
-import ulsu.gorolevichivan.entity.auth.actions.EmployeeActions;
+import ulsu.gorolevichivan.entity.auth.actions.StructureActions;
 import ulsu.gorolevichivan.entity.auth.actions.ProjectActions;
 import ulsu.gorolevichivan.entity.auth.actions.TaskActions;
 import ulsu.gorolevichivan.entity.structure.Employee;
@@ -80,10 +80,13 @@ public class ImportService {
     }
 
     public UserRoleActions seniorPMRoleActions() {
-        EmployeeActions employeeActions = new EmployeeActions();
-        employeeActions.setEmployeeCreate(false);
-        employeeActions.setPositionCreate(false);
-        employeeActions.setDivisionCreate(false);
+        StructureActions structureActions = new StructureActions();
+        structureActions.setEmployeeCreate(false);
+        structureActions.setEmployeeEdit(false);
+        structureActions.setPositionCreate(false);
+        structureActions.setPositionEdit(false);
+        structureActions.setDivisionCreate(false);
+        structureActions.setDivisionEdit(false);
 
         ProjectActions projectActions = new ProjectActions();
         projectActions.setProjectCreate(true);
@@ -95,7 +98,7 @@ public class ImportService {
         taskActions.setTaskReview(true);
 
         UserRoleActions userRoleActions = new UserRoleActions();
-        userRoleActions.setEmployeeActions(employeeActions);
+        userRoleActions.setStructureActions(structureActions);
         userRoleActions.setProjectActions(projectActions);
         userRoleActions.setTaskActions(taskActions);
 

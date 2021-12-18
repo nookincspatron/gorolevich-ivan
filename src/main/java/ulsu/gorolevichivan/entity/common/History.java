@@ -1,10 +1,11 @@
 package ulsu.gorolevichivan.entity.common;
 
 import lombok.Data;
-import ulsu.gorolevichivan.entity.structure.Employee;
 import ulsu.gorolevichivan.entity.general.Comment;
+import ulsu.gorolevichivan.entity.general.Project;
 import ulsu.gorolevichivan.entity.general.Task;
 import ulsu.gorolevichivan.entity.general.TaskManagement;
+import ulsu.gorolevichivan.entity.structure.Employee;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -24,6 +25,10 @@ public class History {
     @ManyToOne
     @JoinColumn(name = "employee")
     private Employee employee;
+
+    @ManyToOne
+    @JoinColumn(name = "project")
+    private Project project;
 
     @ManyToOne
     @JoinColumn(name = "task")

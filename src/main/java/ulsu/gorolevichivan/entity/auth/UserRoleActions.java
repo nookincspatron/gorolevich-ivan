@@ -2,7 +2,7 @@ package ulsu.gorolevichivan.entity.auth;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
-import ulsu.gorolevichivan.entity.auth.actions.EmployeeActions;
+import ulsu.gorolevichivan.entity.auth.actions.StructureActions;
 import ulsu.gorolevichivan.entity.auth.actions.ProjectActions;
 import ulsu.gorolevichivan.entity.auth.actions.TaskActions;
 
@@ -26,5 +26,5 @@ public class UserRoleActions {
 
     @Embedded
     @JsonSerialize
-    private EmployeeActions employeeActions;
+    private StructureActions structureActions;
 }

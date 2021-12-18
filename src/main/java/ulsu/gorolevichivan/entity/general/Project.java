@@ -42,12 +42,6 @@ public class Project {
     @JoinColumn(name = "status")
     private Dictionary status;
 
-    @Column(name = "is_done")
-    private Boolean isDone;
-
-    @Column(name = "consumer")
-    private String consumer;
-
     @ManyToOne
     @JoinColumn(name = "manager")
     private Employee manager;

@@ -49,9 +49,6 @@ public class Task {
     @Column(name = "is_done")
     private Boolean isDone;
 
-    @Column(name = "allow_parallel")
-    private Boolean allowParallel;
-
     @ManyToOne
     @JoinColumn(name = "project")
     private Project project;
@@ -75,6 +72,10 @@ public class Task {
     @ManyToOne
     @JoinColumn(name = "prev_performer")
     private Employee prevPerformer;
+
+    @ManyToOne
+    @JoinColumn(name = "reviewer")
+    private Employee reviewer;
 
     @ManyToOne
     @JoinColumn(name = "prev_reviewer")
