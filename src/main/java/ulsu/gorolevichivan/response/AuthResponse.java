@@ -8,13 +8,13 @@ public class AuthResponse extends StatusResponse {
 
     public String type;
     public String token;
-    public Date expires;
+    public Date expires_in;
 
-    public AuthResponse(String status, String message, String type, String token, Date expires) {
+    public AuthResponse(String status, String message, String type, String token, Date expires_in) {
         super(status, message);
         this.type = type;
         this.token = token;
-        this.expires = expires;
+        this.expires_in = expires_in;
     }
 
     public static AuthResponse success(String token) {

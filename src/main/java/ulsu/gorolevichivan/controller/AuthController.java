@@ -14,6 +14,10 @@ import ulsu.gorolevichivan.response.Response;
 import ulsu.gorolevichivan.response.StatusResponse;
 import ulsu.gorolevichivan.service.UserService;
 
+import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+
 @RestController
 @RequestMapping(path = "/auth")
 public class AuthController {
@@ -31,9 +35,9 @@ public class AuthController {
     }
 
     @PostMapping(consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Response> auth(
+    public ResponseEntity<Response> auth (
             @RequestBody AuthRequest authRequest
-    ) {
+    ) throws IOException, NoSuchAlgorithmException, InvalidKeySpecException {
         boolean match = userService.verify(
                 authRequest.getUsername(),
                 authRequest.getPassword()
